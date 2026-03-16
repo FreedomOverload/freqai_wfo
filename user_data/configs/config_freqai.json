@@ -1,0 +1,130 @@
+{
+  "bot_name": "freqtrade-gateio",
+  "exchange": {
+    "name": "binance",
+    "key": "",
+    "secret": "",
+    "ccxt_config": {
+      "enableRateLimit": true
+    },
+    "ccxt_async_config": {},
+    "pair_whitelist": [
+      "BTC/USDT:USDT"
+    ]
+  },
+  "telegram": {
+    "enabled": true,
+    "token": "",
+    "chat_id": "",
+    "allow_custom_messages": true,
+    "notification_settings": {
+      "status": "on",
+      "warning": "on",
+      "startup": "on",
+      "entry": "on",
+      "entry_fill": "on",
+      "entry_cancel": "on",
+      "exit": {
+        "roi": "on",
+        "emergency_exit": "on",
+        "force_exit": "on",
+        "exit_signal": "on",
+        "trailing_stop_loss": "on",
+        "stop_loss": "on",
+        "stoploss_on_exchange": "on",
+        "custom_exit": "on",
+        "partial_exit": "on"
+      },
+      "exit_cancel": "on",
+      "exit_fill": "on",
+      "protection_trigger": "on",
+      "protection_trigger_global": "on",
+      "strategy_msg": "on",
+      "show_candle": "on"
+    },
+    "reload": true,
+    "balance_dust_level": 0.01
+  },
+  "strategy": "AwesomeMacdFreqAi",
+  "trading_mode": "futures",
+  "margin_mode": "isolated",
+  "dataformat_ohlcv": "feather",
+  "dataformat_trades": "feather",
+  "pairlists": [
+    {
+      "method": "StaticPairList"
+    }
+  ],
+  "order_types": {
+    "entry": "market",
+    "exit": "market",
+    "emergency_exit": "market",
+    "force_entry": "market",
+    "force_exit": "market",
+    "stoploss": "limit",
+    "stoploss_on_exchange": false,
+    "stoploss_on_exchange_interval": 60
+  },
+  "dry_run": false,
+  "dry_run_wallet": 200,
+  "max_open_trades": 1,
+  "stake_currency": "USDT",
+  "stake_amount": 50,
+  "tradable_balance_ratio": 0.99,
+  "fiat_display_currency": "USD",
+  "unfilledtimeout": {
+    "entry": 10,
+    "exit": 10,
+    "exit_timeout_count": 0,
+    "unit": "minutes"
+  },
+  "entry_pricing": {
+    "price_side": "other",
+    "use_order_book": true
+  },
+  "exit_pricing": {
+    "price_side": "other",
+    "use_order_book": true
+  },
+  "force_entry_enable": true,
+  "initial_state": "running",
+  "internals": {
+    "process_throttle_secs": 5
+  },
+  "freqai": {
+    "enabled": true,
+    "purge_old_models": 0,
+    "train_period_days": 5,
+    "backtest_period_days": 5,
+    "save_backtest_models": true,
+    "live_retrain_hours": 99999999999999,
+    "identifier": "unique-id",
+    "feature_parameters": {
+      "include_timeframes": [
+        "1h",
+        "4h"
+      ],
+      "include_corr_pairlist": [
+        "BTC/USDT:USDT"
+      ],
+      "label_period_candles": 20,
+      "include_shifted_candles": 20,
+      "DI_threshold": 0.9,
+      "weight_factor": 0.9,
+      "principal_component_analysis": false,
+      "use_SVM_to_remove_outliers": true,
+      "indicator_periods_candles": [
+        10,
+        20
+      ]
+    },
+    "data_split_parameters": {
+      "test_size": 0.3,
+      "random_state": 290194
+    },
+    "model_training_parameters": {
+      "n_estimators": 100,
+      "learning_rate": 0.05
+    }
+  }
+}

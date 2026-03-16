@@ -1,0 +1,17 @@
+pandas
+pyarrow
+fpdf2
+matplotlib
+mplfinance
+petname
+jupyterlab 
+jupyterlab_widgets
+jedi-language-server
+jupyterlab-git
+ipywidgets
+tabulate
+jupyter-lsp
+jupyterlab-lsp
+pip-review
+catboost
+ngboost

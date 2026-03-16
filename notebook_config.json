@@ -1,0 +1,20 @@
+{
+    "concurrency": 2,
+    "backtest_timeranges": [
+        "20250101-20250601"
+    ],
+    "backtest_split_days": 30,
+    "download_data": true,
+    "test_run_mode": false,
+    "meta_model_test_size": 0.03,
+    "base_model": "CatboostClassifier",
+    "base_model_config": "user_data/configs/config_freqai.json",
+    "base_model_test_size": 0.03,
+    "base_model_backtest_period_days": 30,
+    "generate_train_period_days_min": 30,
+    "generate_train_period_days_max": 60,
+    "generate_train_period_days_step": 2,
+    "leverage": 5,
+    "timeframe": "1h",
+    "target_shifted_candles": 10
+}

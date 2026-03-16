@@ -1,0 +1,27 @@
+---
+services:
+    freqtrade_freqai:
+        image: freqtradeorg/freqtrade:2025.11_freqai
+        # # Enable GPU Image and GPU Resources
+        # # Make sure to uncomment the whole deploy section
+        # deploy:
+        #   resources:
+        #     reservations:
+        #       devices:
+        #         - driver: nvidia
+        #           count: 1
+        #           capabilities: [gpu]
+    
+        # Build step - only needed when additional dependencies are needed
+        # build:
+        #   context: .
+        #   dockerfile: "./docker/Dockerfile.custom"
+        restart: unless-stopped
+        volumes:
+          - "./user_data:/freqtrade/user_data"
+          
+    freqtrade_freqai_livetrade:
+        image: freqtradeorg/freqtrade:2025.11_freqai
+        restart: unless-stopped
+        volumes:
+          - "./user_data:/freqtrade/user_data"
