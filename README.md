@@ -1,4 +1,4 @@
-# A simple Jupyter work flow for FreqAI Walk-Forward Optimizer
+# A simple Jupyter work flow for FreqAI Walk-Forward Optimization
 
 An attempt to automates the complex process of running multiple FreqAI backtests plus training a secondary Meta-Model (e.g., CatBoostRegressor).
 
